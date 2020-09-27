@@ -18,7 +18,7 @@
 #define LPF2_CURRENT_MAX 2444
 #define LPF2_CURRENT_MAX_RAW 4095
 
-typedef enum HubType
+enum HubType
 {
   UNKNOWNHUB = 0,
   BOOST_MOVE_HUB = 2,
@@ -28,7 +28,7 @@ typedef enum HubType
   CONTROL_PLUS_HUB = 6
 };
 
-typedef enum BLEManufacturerData
+enum BLEManufacturerData
 {
   DUPLO_TRAIN_HUB_ID = 32,   //0x20
   BOOST_MOVE_HUB_ID = 64,    //0x40
@@ -37,7 +37,7 @@ typedef enum BLEManufacturerData
   CONTROL_PLUS_HUB_ID = 128  //0x80
 };
 
-typedef enum DeviceType
+enum DeviceType
 {
   UNKNOWNDEVICE = 0,
   SIMPLE_MEDIUM_LINEAR_MOTOR = 1,
@@ -75,7 +75,7 @@ typedef enum DeviceType
   TECHNIC_LARGE_ANGULAR_MOTOR_GREY = 76,  // Mindstorms
 };
 
-typedef enum LpfLedColor
+enum LpfLedColor
 {
   BLACK = 0,
   PINK = 1,
