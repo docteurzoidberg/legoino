@@ -26,7 +26,7 @@ using namespace std::placeholders;
 
 typedef void (*ButtonCallback)(bool isPressed);
 
-typedef struct Device
+struct Device
 {
   byte PortNumber;
   byte DeviceType;
