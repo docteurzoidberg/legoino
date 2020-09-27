@@ -1,9 +1,9 @@
 /*
  * Lpf2Hub.h - Arduino base class for controlling Powered UP and Boost controllers
- * 
+ *
  * (c) Copyright 2019 - Cornelius Munz
  * Released under MIT License
- * 
+ *
 */
 
 #ifndef Lpf2Hub_h
@@ -53,7 +53,7 @@ public:
   void setHubName(char name[]);
   void shutDownHub();
   byte getDeviceTypeForPortNumber(byte portNumber);
-  void setLedColor(Color color);
+  void setLedColor(LpfLedColor color);
   void setLedRGBColor(char red, char green, char blue);
   void setLedHSVColor(int hue, double saturation, double value);
 

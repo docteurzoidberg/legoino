@@ -1,9 +1,9 @@
 /*
  * Lpf2Hub.cpp - Arduino base class for controlling Powered UP and Boost controllers
- * 
+ *
  * (c) Copyright 2019 - Cornelius Munz
  * Released under MIT License
- * 
+ *
 */
 
 #include "Lpf2Hub.h"
@@ -17,7 +17,7 @@ int Lpf2HubColor;
 
 /**
  * Derived class which could be added as an instance to the BLEClient for callback handling
- * The current hub is given as a parameter in the constructor to be able to set the 
+ * The current hub is given as a parameter in the constructor to be able to set the
  * status flags on a disconnect event accordingly
  */
 class Lpf2HubClientCallback : public BLEClientCallbacks
@@ -619,7 +619,7 @@ void Lpf2Hub::parsePortAction(uint8_t *pData)
  * @param [in] pBLERemoteCharacteristic The pointer to the characteristic
  * @param [in] pData The pointer to the received data
  * @param [in] length The length of the data array
- * @param [in] isNotify 
+ * @param [in] isNotify
  */
 void Lpf2Hub::notifyCallback(
     NimBLERemoteCharacteristic *pBLERemoteCharacteristic,
@@ -760,7 +760,7 @@ void Lpf2Hub::registerButtonCallback(ButtonCallback buttonCallback)
  * @brief Set the color of the HUB LED with predefined colors
  * @param [in] color one of the available hub colors
  */
-void Lpf2Hub::setLedColor(Color color)
+void Lpf2Hub::setLedColor(LpfLedColor color)
 {
     byte setColorMode[8] = {0x41, 0x32, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00};
     WriteValue(setColorMode, 8);
@@ -769,10 +769,10 @@ void Lpf2Hub::setLedColor(Color color)
 }
 
 /**
- * @brief Set the color of the HUB LED with RGB values 
- * @param [in] red 0..255 
- * @param [in] green 0..255 
- * @param [in] blue 0..255 
+ * @brief Set the color of the HUB LED with RGB values
+ * @param [in] red 0..255
+ * @param [in] green 0..255
+ * @param [in] blue 0..255
  */
 void Lpf2Hub::setLedRGBColor(char red, char green, char blue)
 {
@@ -783,9 +783,9 @@ void Lpf2Hub::setLedRGBColor(char red, char green, char blue)
 }
 
 /**
- * @brief Set the color of the HUB LED with HSV values 
- * @param [in] hue 0..360 
- * @param [in] saturation 0..1 
+ * @brief Set the color of the HUB LED with HSV values
+ * @param [in] hue 0..360
+ * @param [in] saturation 0..1
  * @param [in] value 0..1
  */
 void Lpf2Hub::setLedHSVColor(int hue, double saturation, double value)
@@ -896,7 +896,7 @@ bool Lpf2Hub::connectHub()
     /** Check if we have a client we should reuse first **/
     if (NimBLEDevice::getClientListSize())
     {
-        /** Special case when we already know this device, we send false as the 
+        /** Special case when we already know this device, we send false as the
          *  second argument in connect() to prevent refreshing the service database.
          *  This saves considerable time and power.
          */

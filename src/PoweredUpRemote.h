@@ -1,9 +1,9 @@
 /*
  * PoweredUpRemote.h - Arduino Library for controlling PoweredUp remote controls (train)
- * 
+ *
  * (c) Copyright 2019 - Cornelius Munz
  * Released under MIT License
- * 
+ *
 */
 
 #ifndef PoweredUpRemote_h
@@ -27,7 +27,7 @@ public:
   PoweredUpRemote();
 
   //Methods
-  void setLedColor(Color color);
+  void setLedColor(LpfLedColor color);
   void setLedRGBColor(char red, char green, char blue);
 };
 

@@ -1,9 +1,9 @@
 /*
  * Lpf2HubConst.h - definition of enum types and constants
- * 
+ *
  * (c) Copyright 2020 - Cornelius Munz
  * Released under MIT License
- * 
+ *
 */
 
 #ifndef Lpf2HubConst_h
@@ -75,7 +75,7 @@ typedef enum DeviceType
   TECHNIC_LARGE_ANGULAR_MOTOR_GREY = 76,  // Mindstorms
 };
 
-typedef enum Color
+typedef enum LpfLedColor
 {
   BLACK = 0,
   PINK = 1,
